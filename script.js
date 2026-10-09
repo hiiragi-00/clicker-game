@@ -13,7 +13,7 @@ const autoUpgradeMessage = document.getElementById("autoUpgradeMessage");
 const clickPowerMessage = document.getElementById("clickPowerMessage");
 const autoPowerMessage = document.getElementById("autoPowerMessage");
 const deleteDataButton = document.getElementById("deleteDataButton");
-const clickSound = new Audio("./決定ボタンを押す42.mp3");
+const clickSound = new Audio("https://dbfexdrdfjqtmjfcejyl.supabase.co/storage/v1/object/public/material/clickSound.mp3");
 
 //UIの画面更新するための関数
 function updateMessage() {
@@ -46,6 +46,7 @@ autoButton.addEventListener("click", function () {
         autoButton.style.color = "green";
         autoTimer = setInterval(function () {
             money = money + autoUpgrade.power;
+            playSound();
             updateMessage();
         }, 1000);
     } else {
